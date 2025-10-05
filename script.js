@@ -1,3 +1,19 @@
+// Fetch JSON
+fetch('data.json')
+  .then(res => res.json())
+  .then(data => {
+    console.log("JSON data:", data);
+  });
+
+// Fetch .npy as arrayBuffer
+fetch('my_array.npy')
+  .then(res => res.arrayBuffer())
+  .then(buffer => {
+    console.log("Raw .npy buffer:", buffer);
+  });
+
+
+
 document.addEventListener('DOMContentLoaded', () => {
     // --- CONFIGURATION ---
     const API_BASE_URL = 'http://127.0.0.1:5000';
@@ -409,4 +425,5 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initial setup
     updatePlayPauseButton();
     speedLabel.textContent = `${state.speedMultiplier}x`;
+
 });
